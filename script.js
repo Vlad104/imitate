@@ -114,3 +114,49 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   };
 });
+
+document.getElementById('confirm-send').addEventListener('click', function() {
+  // Получаем значения из полей (если нужно)
+  const address = document.getElementById('send-address').value;
+  const currency = document.getElementById('send-currency').value;
+  const amount = document.getElementById('send-amount').value;
+
+  // Здесь можно добавить код для обработки транзакции (например, API-запрос)
+
+  // Показываем сообщение о транзакции
+  const message = document.getElementById('transaction-message');
+  message.style.display = 'block';
+
+  // Скрываем попап
+  document.getElementById('send-popup').style.display = 'none';
+
+  // Сбрасываем поля ввода (опционально)
+  document.getElementById('send-address').value = '';
+  document.getElementById('send-amount').value = '';
+});
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  // Предотвращаем отправку формы
+  event.preventDefault();
+
+  // Получаем значения email и сообщения
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Здесь можно добавить код для обработки отправки сообщения, если требуется
+  console.log('Email:', email);
+  console.log('Message:', message);
+
+  // Показываем попап с сообщением об успешной отправке
+  const successPopup = document.getElementById('success-popup');
+  successPopup.style.display = 'block';
+
+  // Закрываем попап через 3 секунды
+  setTimeout(() => {
+      successPopup.style.display = 'none';
+  }, 3000); // 3000 миллисекунд = 3 секунды
+
+  // Также можно очистить поля после успешной отправки
+  document.getElementById('email').value = '';
+  document.getElementById('message').value = '';
+});

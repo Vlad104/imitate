@@ -27,7 +27,7 @@ nav {
   background-color: #242424; /* Цвет бокового меню */
   height: 100vh; /* Отображение на всю высоту */
   position: fixed; /* Фиксированное размещение */
-  top: 50px; /* Отступ от верха, снизу заголовка */
+  top: 80px; /* Отступ от верха, снизу заголовка */
   left: 0;
 }
 
@@ -79,10 +79,11 @@ main {
 .user-widget {
   display: flex;
   align-items: center;
+  margin-left: 40px; /* Отступ между иконкой и электронной почтой */
 }
 
 .user-widget img {
-  width: 30px; /* Размер иконки пользователя */
+  width: 35px; /* Размер иконки пользователя */
   height: 30px;
   margin-right: 10px; /* Отступ между иконкой и электронной почтой */
 }
@@ -314,40 +315,55 @@ select:focus {
   font-size: 12px; /* Размер шрифта для подписи */
   color: #888; /* Цвет текста для подписи */
 }
-
 /* Стили для формы обратной связи */
 .contact-form {
   max-width: 600px; 
-  margin: 20px auto; /* Центрируем форму */
+  margin: 30px auto; /* Центрируем форму, отступ снизу увеличен для лучшего визуального восприятия */
   padding: 20px; 
-  background-color: #f9f9f9; /* Светлый фон */
+  background-color: #2c3e50; /* Фон, схожий с другими секциями */
   border-radius: 8px; 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+  color: white; /* Цвет текста, чтобы соответствовать общей теме */
 }
 
 .contact-form label {
   display: block; 
   margin-bottom: 8px; /* Отступ под заголовком */
+  font-size: 14px; /* Размер шрифта для соответствия остальным стилям */
+  color: #ccc; /* Цвет текста для меток */
 }
 
 .contact-form input, 
 .contact-form textarea {
-  width: 100%; 
+  width: 96%; 
   padding: 10px; 
   margin-bottom: 10px; /* Отступ между полями */
-  border: 1px solid #ccc; 
+  border: 1px solid #444; /* Цвет границы, соответствующий стилю всего сайта */
   border-radius: 4px; 
+  background: #181818; /* Фон полей ввода отражает общий фон страницы */
+  color: white; /* Цвет текста полей ввода */
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+  border-color: #3498db; /* Цвет границы при фокусе */
+  outline: none; /* Убираем обводку */
 }
 
 .contact-form button {
-  width: 100%; 
-  padding: 10px; 
-  background-color: #4CAF50; 
+  width: 96%; 
+  padding: 10px;
+  background-color: #3498db; /* Цвет кнопки */
   color: white; 
   border: none; 
   border-radius: 4px; 
   cursor: pointer; 
+  transition: background-color 0.3s; /* Плавное изменение цвета фона */
 }
 .contact-form button:hover {
-  background-color: #45a049; /* Темнее при наведении */
+  background-color: #2980b9; /* Темнее при наведении */
+}
+
+.app-links {
+  margin-top: 300px;
 }

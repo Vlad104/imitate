@@ -8,34 +8,23 @@
 </head>
 <body>
     <header>
-        <h1>Криптобиржа Космос</h1>
+        <div class="header-content">
+            <img src="logo.png" alt="Logo" class="site-logo">
+            <div>
+                <h1>CryptoStar</h1>
+                <p class="site-subtitle">crypto asset exchange platform</p>
+            </div>
+        </div>
         <div class="header-content">
             <button id="send-crypto-btn" class="header-button">Отправить</button>
             <button id="receive-crypto-btn" class="header-button">Пополнить</button>
             <div class="user-widget">
-                <img src="user-icon.svg" alt="User Icon">
-                <span class="user-email">user@example.com</span>
+                <img src="proflog.png" alt="User Icon">
+                <span class="user-email">auliashkin@gmail.com</span>
             </div>
         </div>
     </header>
     
-    <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="exchange.html">Биржа</a></li>
-            <li><a href="history.html">История транзакций</a></li>
-            <li><a href="contact.html">Написать нам</a></li>
-            <li><a href="help.html">Справка</a></li>
-            <li>
-                <a href="https://play.google.com" target="_blank">
-                    <img src="google-play-icon.png" alt="Google Play" class="app-icons">
-                </a>
-                <a href="https://www.apple.com/app-store/" target="_blank">
-                    <img src="app-store-icon.png" alt="App Store" class="app-icons">
-                </a>
-            </li>
-        </ul>
-    </nav>
 
     <main>
         <section id="buy">
@@ -64,27 +53,26 @@
                 </thead>
                 <tbody id="orders-list">
                     <tr>
-                        <td>0.01</td>
-                        <td>20000</td>
-                        <td>2000000</td>
-                        <td><button class="buy-button">Купить</button></td>
+                        <td>0.001</td>
+                        <td>6 918,00</td>
+                        <td>6 918 000,00</td>
+                        <td><button class="exchange-button">Купить</button></td>
                     </tr>
                     <tr>
                         <td>0.02</td>
-                        <td>40000</td>
-                        <td>2000000</td>
-                        <td><button class="buy-button">Купить</button></td>
+                        <td>138 376,00</td>
+                        <td>6 918 200,00</td>
+                        <td><button class="exchange-button">Купить</button></td>
                     </tr>
                     <tr>
-                        <td>0.005</td>
+                        <td>0.00023</td>
                         <td>10000</td>
-                        <td>2000000</td>
-                        <td><button class="buy-button">Купить</button></td>
+                        <td>1 593,00</td>
+                        <td><button class="exchange-button">Купить</button></td>
                     </tr>
                 </tbody>
             </table>
         </section>
-
         <div id="send-popup" class="popup">
             <div class="popup-content">
                 <span class="close" id="close-send-popup">&times;</span>
@@ -96,16 +84,20 @@
                     <option value="ETH">Ethereum</option>
                 </select>
                 <input type="number" id="send-amount" placeholder="Сумма" required>
-                <button id="confirm-send">Отправить</button>
+                <button id="confirm-send" class="exchange-button">Отправить</button>
             </div>
+        </div>
+        <!-- Новое место для сообщения -->
+        <div id="transaction-message" style="display: none; color: green; margin-top: 10px;">
+            Транзакция отправлена!
         </div>
 
         <div id="receive-popup" class="popup">
             <div class="popup-content">
                 <span class="close" id="close-receive-popup">&times;</span>
                 <h3>Получение криптовалюты</h3>
-                <p>Адрес для получения: <span id="receive-address">Ваш_Адрес_Кошелька</span></p>
-                <div id="qr-code">[QR Code здесь]</div>
+                <p>Адрес для получения: <span id="receive-address">34xp4vRoCGJym3xR7yCVPFHoCNxv4Twseo</span></p>
+                <img src="qr.png" width="400px" height="400px">
             </div>
         </div>
 

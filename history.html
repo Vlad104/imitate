@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История транзакций - Космос</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Криптобиржа Космос</h1>
+        <div class="header-content">
+            <button id="send-crypto-btn" class="header-button">Отправить</button>
+            <button id="receive-crypto-btn" class="header-button">Пополнить</button>
+            <div class="user-widget">
+                <img src="user-icon.svg" alt="User Icon">
+                <span class="user-email">user@example.com</span>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="exchange.html">Биржа</a></li>
+            <li><a href="history.html">История транзакций</a></li>
+            <li><a href="contact.html">Написать нам</a></li>
+            <li><a href="help.html">Справка</a></li>
+            <li>
+                <a href="https://play.google.com" target="_blank">
+                    <img src="google-play-icon.png" alt="Google Play" class="app-icons">
+                </a>
+                <a href="https://www.apple.com/app-store/" target="_blank">
+                    <img src="app-store-icon.png" alt="App Store" class="app-icons">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="transaction-history">
+            <h2>История транзакций</h2>
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Операция</th>
+                        <th>Криптовалюта</th>
+                        <th>Сумма</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-list">
+                    <tr>
+                        <td>30.03.2025</td>
+                        <td>Отправка</td>
+                        <td>Bitcoin</td>
+                        <td>0.01 BTC</td>
+                        <td>Успешно</td>
+                    </tr>
+                    <tr>
+                        <td>28.03.2025</td>
+                        <td>Пополнение</td>
+                        <td>Ethereum</td>
+                        <td>0.05 ETH</td>
+                        <td>Успешно</td>
+                    </tr>
+                    <tr>
+                        <td>27.03.2025</td>
+                        <td>Обмен</td>
+                        <td>Litecoin</td>
+                        <td>0.1 LTC</td>
+                        <td>Успешно</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div id="send-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="close-send-popup">&times;</span>
+                <h3>Отправка криптовалюты</h3>
+                <input type="text" id="send-address" placeholder="Адрес кошелька" required>
+                <select id="send-currency">
+                    <option value="BTC">Bitcoin</option>
+                    <option value="LTC">Litecoin</option>
+                    <option value="ETH">Ethereum</option>
+                </select>
+                <input type="number" id="send-amount" placeholder="Сумма" required>
+                <button id="confirm-send">Отправить</button>
+            </div>
+        </div>
+
+        <div id="receive-popup" class="popup">
+            <div class="popup-content">
+                <span class="close" id="close-receive-popup">&times;</span>
+                <h3>Получение криптовалюты</h3>
+                <p>Адрес для получения: <span id="receive-address">Ваш_Адрес_Кошелька</span></p>
+                <div id="qr-code">[QR Code здесь]</div>
+            </div>
+        </div>
+
+        <div id="confirm-popup" class="confirm-popup">
+            <div class="confirm-popup-content">
+                <span class="close" id="close-confirm-popup">&times;</span>
+                <h3 id="confirm-title">Купить криптовалюту?</h3>
+                <p id="confirm-text"></p>
+                <button id="buy-confirm">Купить</button>
+                <button id="buy-cancel">Отмена</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

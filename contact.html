@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Написать нам - Космос</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo.svg" alt="Logo" class="site-logo">
+            <div>
+                <h1>Криптобиржа Космос</h1>
+                <p class="site-subtitle">crypto asset exchange platform</p>
+            </div>
+        </div>
+        <div class="header-content">
+            <button id="send-crypto-btn" class="header-button">Отправить</button>
+            <button id="receive-crypto-btn" class="header-button">Пополнить</button>
+            <div class="user-widget">
+                <img src="user-icon.svg" alt="User Icon">
+                <span class="user-email">user@example.com</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="exchange.html">Биржа</a></li>
+            <li><a href="history.html">История транзакций</a></li>
+            <li><a href="contact.html">Написать нам</a></li>
+            <li><a href="help.html">Справка</a></li>
+        </ul>
+        <div class="app-links">
+            <a href="https://play.google.com" target="_blank">
+                <svg /* SVG для Google Play */ xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2L1 12l11 10v-8l6-5-6-5V2zm0 10l4 4-4 3v-7z" fill="#000"/></svg>
+            </a>
+            <a href="https://www.apple.com/app-store/" target="_blank">
+                <svg /* SVG для App Store */ xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M12 0C5.372 0 0 5.373 0 12s5.372 12 12 12 12-5.373 12-12S18.628 0 12 0zm1.996 20.234c-.857.485-1.853.73-2.996.73-1.104 0-2.148-.25-3.086-.68.465-.574.773-1.073.852-1.516h.006a3.523 3.523 0 0 0 3.369 2.254c.56 0 1.031-.082 1.493-.247-.031-.034-.097-.092-.096-.096-.05-1.39 1.294-2.331 2.808-2.356l.102.006c.562 0 1.332.02 1.993-.003.536-.016 1.312-.328 1.776-1.016-.918-.209-1.451-1.268-1.437-2.18.019-1.155.925-2.244 2.264-2.283a3.373 3.373 0 0 0 .452-.095c.091-.02.123-.076.133-.093.002-.004.004-.009.002-.014-.53-.029-.732-.804-.798-1.282-.23-.024-3.092 1.021-3.964 1.212-.904.311-2.216-1.449-2.263-2.133-.165 2.792-2.545 5.385-4.436 5.648-.159.051-.19-.042-.178-.083.046-.144 2.1-2.86 2.286-3.041.124-.208.374-.05.628.073a8.569 8.569 0 0 0 2.076.095c.539 0 1.081-.055 1.577-.253-.312-.318-.674-.687-1.066-1.087-1.274-1.233-2.419-2.219-2.963-2.884-.226-.256.266-.276.532-.304C11.078 10.282 18.138 8.11 19.619 11.383c.03.083.072.167.126.244-.177.113-1.613 1.004-2.254 1.439 1.329.713 3.095.349 4.554-.918.oguristic here.125-.258-.56-.1-1.074-1.189.015-.983-1.439-1.746-1.697-3.643-.575-3.594-3.229 2.732-.427.2-1.388-2.27.925-2.774C19.345 8.477 17.238 19.015 14.996 20.234h-1.572z" fill="#000"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact-form">
+            <h2>Написать нам</h2>
+            <form id="contact-form">
+                <label for="email">Ваш email:</label>
+                <input type="email" id="email" required placeholder="Введите вашу почту">
+                <label for="message">Ваше сообщение:</label>
+                <textarea id="message" rows="4" required placeholder="Введите ваше сообщение"></textarea>
+                <button type="submit" class="header-button">Отправить</button>
+            </form>
+        </section>
+
+        <div id="success-popup" class="success-popup">
+            <div class="success-popup-content">
+                <span class="close" id="close-success-popup">&times;</span>
+                <h3>Сообщение отправлено!</h3>
+                <p>Спасибо за ваше сообщение. Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

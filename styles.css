@@ -1,0 +1,353 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #181818; /* Темный фон */
+  color: white; /* Белый цвет текста */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Расположение вертикального меню и контента */
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* Выравнивание элементов в заголовке */
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: fixed; /* Зафиксирован вверху */
+  top: 0;
+  left: 0;
+  right: 0; /* Занимает всю ширину */
+  z-index: 1000; /* Убедитесь, что заголовок выше других элементов */
+}
+
+nav {
+  width: 200px; /* Ширина бокового меню */
+  background-color: #242424; /* Цвет бокового меню */
+  height: 100vh; /* Отображение на всю высоту */
+  position: fixed; /* Фиксированное размещение */
+  top: 50px; /* Отступ от верха, снизу заголовка */
+  left: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  padding: 15px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li:hover {
+  background-color: #3e3e3e; /* Плавное изменение цвета фона при наведении */
+}
+
+main {
+  margin-left: 220px; /* Отступ для контента справа от меню */
+  padding: 20px;
+  margin-top: 60px; /* Отсутствие перекрытия с заголовком */
+  flex: 1; /* Занять оставшееся место */
+}
+
+/* Стили для кнопок в заголовке */
+.header-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-left: 20px; /* Отступ для кнопок */
+  transition: background-color 0.3s; /* Плавное изменение цвета фона */
+}
+
+.header-button:hover {
+  background-color: #2980b9; /* Цвет кнопки при наведении */
+}
+
+/* Стили для виджета пользователя */
+.user-widget {
+  display: flex;
+  align-items: center;
+}
+
+.user-widget img {
+  width: 30px; /* Размер иконки пользователя */
+  height: 30px;
+  margin-right: 10px; /* Отступ между иконкой и электронной почтой */
+}
+
+/* Остальные стили остаются без изменений ... */
+
+h1 {
+  margin: 0; /* Убираем отступы у заголовка */
+}
+
+
+/* Стили для секций */
+section {
+  margin: 20px 0;
+  background: #2c3e50; /* Фон для секций */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для списка баланса */
+#balance {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.balance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.balance-item img {
+  width: 30px; /* Иконка */
+  height: 30px;
+}
+
+.balance-item p {
+  margin: 5px 0;
+}
+
+/* Стили для таблицы обменных курсов */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 15px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+th {
+  background-color: #3e3e3e; /* Цвет заголовка таблицы */
+}
+
+/* Стили для кнопки в таблице обменных курсов */
+.exchange-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.exchange-button:hover {
+  background-color: #2980b9; /* Цвет кнопки при наведении */
+}
+
+/* Стили для таблицы истории транзакций */
+.transaction-table th, .transaction-table td {
+  padding: 10px;
+  border: 1px solid #444;
+}
+
+/* Стили для попапов */
+.popup {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); /* Затемнённый фон для попапов */
+  z-index: 1;
+}
+
+.popup-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: black; /* Чёрный текст внутри попапа */
+}
+
+/* Стили для кнопок закрытия попапа */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Стили для полей ввода */
+input[type="text"],
+input[type="number"],
+select {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  width: calc(100% - 22px); /* Учитываем отступы */
+  box-sizing: border-box; /* Для правильного расчета ширины */
+  margin-bottom: 10px; /* Отступ между полями */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+/* Стили для контейнера в заголовке пользователя */
+.header-content {
+  display: flex; 
+  align-items: center;
+}
+
+/* Стили для значков приложений */
+.app-icons {
+  margin-left: 10px; /* Отступ для значков приложений */
+}
+.app-icons img {
+  width: 30px; /* Ширина иконок */
+  height: 30px; /* Высота иконок */
+  margin-left: 10px; /* Отступ между иконками */
+}
+
+/* Стили для попапа подтверждения покупки */
+.confirm-popup {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8); /* Затемнённый фон для попапа */
+  z-index: 1001;
+}
+.confirm-popup-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: black; /* Чёрный текст внутри попапа */
+}
+
+/* Добавим стили для страницы справки */
+.faq-section {
+  margin: 20px 0;
+}
+
+.question {
+  font-weight: bold;
+}
+
+.answer {
+  margin-left: 20px;
+}
+
+/* Стили для попапа успешной отправки сообщения */
+.success-popup {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнённый фон для попапа */
+  z-index: 1001;
+}
+.success-popup-content {
+  background-color: #ffffff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: black; /* Чёрный текст внутри попапа */
+}
+
+/* Стили для навбара */
+.header-content {
+  display: flex; 
+  align-items: center;
+}
+
+.site-logo {
+  width: 40px; /* Ширина иконки */
+  height: 40px; /* Высота иконки */
+  margin-right: 10px; /* Отступ справа от иконки */
+}
+
+/* Стили для подписи */
+.site-subtitle {
+  font-size: 12px; /* Размер шрифта для подписи */
+  color: #888; /* Цвет текста для подписи */
+}
+
+/* Стили для формы обратной связи */
+.contact-form {
+  max-width: 600px; 
+  margin: 20px auto; /* Центрируем форму */
+  padding: 20px; 
+  background-color: #f9f9f9; /* Светлый фон */
+  border-radius: 8px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+.contact-form label {
+  display: block; 
+  margin-bottom: 8px; /* Отступ под заголовком */
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 10px; /* Отступ между полями */
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+}
+
+.contact-form button {
+  width: 100%; 
+  padding: 10px; 
+  background-color: #4CAF50; 
+  color: white; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+}
+.contact-form button:hover {
+  background-color: #45a049; /* Темнее при наведении */
+}

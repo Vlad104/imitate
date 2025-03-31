@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
       confirmPopup.style.display = 'none';
   };
 
-  document.getElementById('close-success-popup').onclick = function() {
-      successPopup.style.display = 'none';
-  };
+  // document.getElementById('close-success-popup').onclick = function() {
+  //     successPopup.style.display = 'none';
+  // };
 
   // Обработка отправки формы обратной связи
   const contactForm = document.getElementById('contact-form');
@@ -135,28 +135,76 @@ document.getElementById('confirm-send').addEventListener('click', function() {
   document.getElementById('send-amount').value = '';
 });
 
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  // Предотвращаем отправку формы
-  event.preventDefault();
+// document.getElementById('contact-form').addEventListener('submit', function(event) {
+//   // Предотвращаем отправку формы
+//   event.preventDefault();
 
-  // Получаем значения email и сообщения
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
+//   // Получаем значения email и сообщения
+//   const email = document.getElementById('email').value;
+//   const message = document.getElementById('message').value;
 
-  // Здесь можно добавить код для обработки отправки сообщения, если требуется
-  console.log('Email:', email);
-  console.log('Message:', message);
+//   // Здесь можно добавить код для обработки отправки сообщения, если требуется
+//   console.log('Email:', email);
+//   console.log('Message:', message);
 
-  // Показываем попап с сообщением об успешной отправке
-  const successPopup = document.getElementById('success-popup');
-  successPopup.style.display = 'block';
+//   // Показываем попап с сообщением об успешной отправке
+//   const successPopup = document.getElementById('success-popup');
+//   successPopup.style.display = 'block';
 
-  // Закрываем попап через 3 секунды
-  setTimeout(() => {
-      successPopup.style.display = 'none';
-  }, 3000); // 3000 миллисекунд = 3 секунды
+//   // Закрываем попап через 3 секунды
+//   setTimeout(() => {
+//       successPopup.style.display = 'none';
+//   }, 3000); // 3000 миллисекунд = 3 секунды
 
-  // Также можно очистить поля после успешной отправки
-  document.getElementById('email').value = '';
-  document.getElementById('message').value = '';
+//   // Также можно очистить поля после успешной отправки
+//   document.getElementById('email').value = '';
+//   document.getElementById('message').value = '';
+// });
+
+// Обработчик для кнопки "Пополнить"
+document.getElementById('deposit-btn').addEventListener('click', function() {
+  document.getElementById('deposit-popup').style.display = 'block';
+});
+
+// Обработчик для кнопки "Вывести"
+document.getElementById('withdraw-btn').addEventListener('click', function() {
+  document.getElementById('withdraw-popup').style.display = 'block';
+});
+
+// Обработчик для закрытия попапа пополнения
+document.getElementById('close-deposit-popup').addEventListener('click', function() {
+  document.getElementById('deposit-popup').style.display = 'none';
+});
+
+// Обработчик для закрытия попапа вывода
+document.getElementById('close-withdraw-popup').addEventListener('click', function() {
+  document.getElementById('withdraw-popup').style.display = 'none';
+});
+
+// Закрытие попапа по клику вне его
+window.addEventListener('click', function(event) {
+  const depositPopup = document.getElementById('deposit-popup');
+  const withdrawPopup = document.getElementById('withdraw-popup');
+  if (event.target === depositPopup) {
+      depositPopup.style.display = 'none';
+  }
+  if (event.target === withdrawPopup) {
+      withdrawPopup.style.display = 'none';
+  }
+});
+
+// Обработка подтверждения пополнения
+document.getElementById('confirm-deposit').addEventListener('click', function() {
+  const cardNumber = document.getElementById('deposit-card-number').value;
+  const amount = document.getElementById('deposit-amount').value;
+  console.log('Пополнение на сумму:', amount, 'с карты:', cardNumber);
+  document.getElementById('deposit-popup').style.display = 'none'; // Закрыть попап
+});
+
+// Обработка подтверждения вывода
+document.getElementById('confirm-withdraw').addEventListener('click', function() {
+  const cardNumber = document.getElementById('withdraw-card-number').value;
+  const amount = document.getElementById('withdraw-amount').value;
+  console.log('Вывод на сумму:', amount, 'на карту:', cardNumber);
+  document.getElementById('withdraw-popup').style.display = 'none'; // Закрыть попап
 });
